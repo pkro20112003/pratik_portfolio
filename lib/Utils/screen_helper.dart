@@ -4,7 +4,7 @@ class ScreenHelper extends StatelessWidget {
   final Widget mobile;
   final Widget tablet;
   final Widget desktop;
-  ScreenHelper(this.mobile, this.tablet, this.desktop, {super.key});
+  const ScreenHelper(this.mobile, this.tablet, this.desktop, {super.key});
   static bool isMobile(BuildContext context) =>
       MediaQuery.of(context).size.width < 800;
 
@@ -15,6 +15,7 @@ class ScreenHelper extends StatelessWidget {
   static bool isDesktop(BuildContext context) =>
       MediaQuery.of(context).size.width < 1200;
 
+  @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {

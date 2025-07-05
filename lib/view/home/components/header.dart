@@ -18,7 +18,7 @@ List<HeaderItem> hearderItem = [
 ];
 
 class HeaderLogo extends StatelessWidget {
-  HeaderLogo({super.key});
+  const HeaderLogo({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,7 +58,7 @@ class HeaderLogo extends StatelessWidget {
 }
 
 class HeaderRow extends StatelessWidget {
-  HeaderRow({super.key});
+  const HeaderRow({super.key});
   @override
   Widget build(BuildContext context) {
     return ResponsiveVisibility(
@@ -121,7 +121,7 @@ class HeaderRow extends StatelessWidget {
 }
 
 class Header extends StatelessWidget {
-  Header({super.key});
+  const Header({super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(

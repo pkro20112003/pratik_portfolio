@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pratik_portfolio/Utils/app_colors.dart';
-import 'package:pratik_portfolio/page/home/home.dart';
+import 'package:pratik_portfolio/view/home/home.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
