@@ -1,20 +1,68 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:fluttericon/typicons_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pratik_portfolio/Utils/app_colors.dart';
 import 'package:pratik_portfolio/Utils/globals.dart';
 import 'package:pratik_portfolio/Utils/screen_helper.dart';
+import 'package:pratik_portfolio/Utils/url.dart';
 import 'package:pratik_portfolio/models/header_item.dart';
+import 'package:pratik_portfolio/view/home/home.dart';
 
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 List<HeaderItem> hearderItem = [
-  HeaderItem(name: "HOME", ontap: () {}),
-  HeaderItem(name: "MY INTRO", ontap: () {}),
-  HeaderItem(name: "SERVICES", ontap: () {}),
-  HeaderItem(name: "TESTIMOIALS", ontap: () {}),
-  HeaderItem(name: "BLOGS", ontap: () {}),
-  HeaderItem(name: "HIRE ME", ontap: () {}, isbutton: true),
+  HeaderItem(
+    name: "HOME",
+    ontap: () {
+      Home().scrollTo(Globals.homeKey);
+    },
+  ),
+  HeaderItem(
+    name: "MY INTRO",
+    ontap: () {
+      Home().scrollTo(Globals.cvKey);
+    },
+  ),
+  HeaderItem(
+    name: "PROJECTS",
+    ontap: () {
+      Home().scrollTo(Globals.healthleticKey);
+    },
+  ),
+  HeaderItem(
+    name: "EDUCATION",
+    ontap: () {
+      Home().scrollTo(Globals.educationKey);
+    },
+  ),
+  HeaderItem(
+    name: "SKILLS",
+    ontap: () {
+      Home().scrollTo(Globals.skillKey);
+    },
+  ),
+  HeaderItem(
+    name: "CONTACTS",
+    ontap: () {
+      Home().scrollTo(Globals.infoKey);
+    },
+  ),
+  HeaderItem(
+    name: "HIRE ME",
+    ontap: () {
+      try {
+        launchUrl(email);
+      } on SocketException {
+        CircularNotchedRectangle();
+      } catch (e) {
+        debugPrint(e.toString());
+      }
+    },
+    isbutton: true,
+  ),
 ];
 
 class HeaderLogo extends StatelessWidget {

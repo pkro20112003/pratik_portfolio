@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pratik_portfolio/Utils/app_colors.dart';
+import 'package:pratik_portfolio/Utils/url.dart';
 import 'package:pratik_portfolio/models/carousel_item_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 List<CarouselItemModel> carouselItem =
     List.generate(
@@ -54,7 +58,15 @@ List<CarouselItemModel> carouselItem =
                   style: ElevatedButton.styleFrom(
                     backgroundColor: hDangerColor,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    try {
+                      launchUrl(email);
+                    } on SocketException {
+                      CircularNotchedRectangle();
+                    } catch (e) {
+                      debugPrint(e.toString());
+                    }
+                  },
                   child: SizedBox(
                     child: Padding(
                       padding: EdgeInsets.symmetric(
@@ -72,6 +84,85 @@ List<CarouselItemModel> carouselItem =
                       ),
                     ),
                   ),
+                ),
+              ),
+              SizedBox(height: 30),
+              SizedBox(
+                width: 200,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        try {
+                          launchUrl(email);
+                        } on SocketException {
+                          CircularNotchedRectangle();
+                        } catch (e) {
+                          debugPrint(e.toString());
+                        }
+                      },
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: CircleAvatar(
+                          backgroundColor: hBackgroundColor,
+                          maxRadius: 24,
+                          minRadius: 16,
+                          child: Image.asset(
+                            "assets/images/email.png",
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        try {
+                          launchUrl(linkedin_url);
+                        } on SocketException {
+                          CircularNotchedRectangle();
+                        } catch (e) {
+                          debugPrint(e.toString());
+                        }
+                      },
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: CircleAvatar(
+                          backgroundColor: hBackgroundColor,
+                          maxRadius: 24,
+                          minRadius: 16,
+                          child: Image.asset(
+                            "assets/images/linkdin.png",
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        try {
+                          launchUrl(git_hub_url);
+                        } on SocketException {
+                          CircularNotchedRectangle();
+                        } catch (e) {
+                          debugPrint(e.toString());
+                        }
+                      },
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: CircleAvatar(
+                          backgroundColor: hBackgroundColor,
+                          maxRadius: 24,
+                          minRadius: 16,
+                          child: Image.asset(
+                            "assets/images/github.png",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
