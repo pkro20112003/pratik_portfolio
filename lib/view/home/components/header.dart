@@ -241,7 +241,10 @@ Widget buildHeaderMobile() {
           onTap: () {
             Globals.scaffoldKey.currentState?.openEndDrawer();
           },
-          child: Icon(Typicons.menu, color: Colors.white),
+          child: SizedBox(
+            width: 100,
+            child: Icon(Typicons.menu, color: Colors.white),
+          ),
         ),
       ),
     ],
