@@ -12,6 +12,9 @@ class Skill extends StatelessWidget {
     SkillListModel(skill: "Responsive UI Design", percentage: 60),
     SkillListModel(skill: "Version Control(Git)", percentage: 80),
   ];
+
+  Skill({super.key});
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: ScreenHelper(
@@ -87,7 +90,7 @@ class Skill extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    list.percentage.toString() + "%",
+                                    "${list.percentage}%",
                                     style: TextStyle(
                                       fontSize: 20,
                                       color: hBackgroundColor,

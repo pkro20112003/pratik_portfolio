@@ -22,6 +22,9 @@ class Info extends StatelessWidget {
       value: "https://www.linkedin.com/in/pratik-rao2003/",
     ),
   ];
+
+  Info({super.key});
+  @override
   Widget build(BuildContext context) {
     return Container(
       child: ScreenHelper(

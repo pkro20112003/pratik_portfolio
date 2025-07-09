@@ -10,6 +10,7 @@ import 'package:pratik_portfolio/models/experience_list_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Education extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: ScreenHelper(
@@ -68,6 +69,8 @@ class Education extends StatelessWidget {
           "Working as a Flutter intern at Khodal Tech, contributing to the development of cross-platform mobile applications. Involved in building responsive UIs, integrating APIs, and ensuring smooth performance across devices under the guidance of senior developers.",
     ),
   ];
+
+  Education({super.key});
   Widget buildUI(BuildContext context, double width) {
     return Container(
       constraints: BoxConstraints(minWidth: width, maxWidth: width),

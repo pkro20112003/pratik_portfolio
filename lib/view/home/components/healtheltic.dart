@@ -5,6 +5,9 @@ import 'package:pratik_portfolio/Utils/app_colors.dart';
 import 'package:pratik_portfolio/Utils/screen_helper.dart';
 
 class Healthletic extends StatelessWidget {
+  const Healthletic({super.key});
+
+  @override
   Widget build(BuildContext context) {
     return ScreenHelper(
       buildUI(context, MediaQuery.of(context).size.width * .8),
