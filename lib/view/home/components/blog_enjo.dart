@@ -8,6 +8,9 @@ import 'package:pratik_portfolio/Utils/url.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlogEnjo extends StatelessWidget {
+  const BlogEnjo({super.key});
+
+  @override
   Widget build(BuildContext context) {
     return ScreenHelper(
       buildUI(context, MediaQuery.of(context).size.width * .8),
